@@ -51,8 +51,15 @@ function generatePhoneNumber(telefone) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(ladoA, ladoB, ladoC) {
+  let alfa = (ladoB + ladoC) - ladoA
+  let beta = (ladoA + ladoC) - ladoB
+  let gama = (ladoA + ladoC) - ladoC
+  if (alfa > 0 && beta > 0 && gama > 0 ) {
+    return true 
+} else {
+    return false
+}
 }
 
 // Desafio 13
