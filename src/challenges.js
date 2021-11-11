@@ -9,10 +9,8 @@ function compareTrue(alfa, beta) {
 
 // Desafio 2
 function calcArea(base, altura) {
-  let area = (base * altura) / 2
-  return area
+  return (base * altura) / 2
 }
-
 // Desafio 3
 function splitSentence(frase) {
   let array = []
@@ -46,15 +44,23 @@ function concatName(array2) {
 
 // Desafio 5
 function footballPoints(vitoria, empate) {
-  let pontos = (vitoria * 3) + empate
-  return pontos
+  return (vitoria * 3) + empate
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(sequencia) {
+  let seq1 = sequencia.sort(compararNumeros)
+  let seq2 = []
+  let seq3 = []
+  let seq4 = []
+  for (i = 0; i < seq1.length; i += 1) {
+      seq2.push(seq1.indexOf(seq1[i]))
+      seq3.push(seq1.lastIndexOf(seq1[i]))
+  } for (i = 0; i < sequencia.length; i += 1) {
+      seq4.push((seq3[i] - seq2[i]) + 1)
+  } return seq4.sort(compararNumeros)[seq4.length - 1]
 }
-
+console.log(highestCount([0, 4, 4, 4, 9, 2, 1]))
 // Desafio 7
 function catAndMouse(rato, gato1, gato2) { 
   let cat1 = Math.abs(rato - gato1)
@@ -104,3 +110,10 @@ module.exports = {
   highestCount,
   splitSentence,
 };
+
+
+// utilizei a função para orgarnizar os numeros do array em ordem crescente na prorpiedade .sort()
+function compararNumeros(a, b) {
+  return a - b;
+}
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
