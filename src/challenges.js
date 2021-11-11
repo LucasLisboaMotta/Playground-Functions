@@ -31,10 +31,19 @@ function splitSentence(frase) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(array2) {
+  let frase3 = ''
+  for (i = 0; i < 3; i += 1) {
+    if (i == 0) {
+      frase3 += array2[array2.length - 1]
+    } else if (i == 1) {
+      frase3 += ', '
+    } else {
+      frase3 += array2[0]
+    }
+  } return frase3  
 }
-
+console.log(concatName(['captain', 'my', 'captain']))
 // Desafio 5
 function footballPoints() {
   // seu código aqui
