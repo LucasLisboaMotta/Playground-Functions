@@ -49,17 +49,25 @@ function footballPoints(vitoria, empate) {
   let pontos = (vitoria * 3) + empate
   return pontos
 }
-console.log(footballPoints(0, 0))
+
 // Desafio 6
 function highestCount() {
   // seu código aqui
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(rato, gato1, gato2) { 
+  let cat1 = Math.abs(rato - gato1)
+  let cat2 = Math.abs(rato - gato2)
+  if (cat1 < cat2) {
+    return "cat1"
+  } else if (cat2 < cat1) {
+    return "cat2"
+  } else {
+    return "os gatos trombam e o rato foge"
+  }
 }
-
+console.log(catAndMouse(0, 1, 1))
 // Desafio 8
 function fizzBuzz() {
   // seu código aqui
