@@ -51,7 +51,7 @@ function footballPoints(vitoria, empate) {
 function highestCount(sequencia) {
   return (sequencia.sort(compararNumeros).lastIndexOf(sequencia[sequencia.length - 1]) - sequencia.sort(compararNumeros).indexOf(sequencia[sequencia.length - 1])) + 1
 }
-console.log(highestCount([1, 9, 2, 3, 9, 5, 7]))
+
 // Desafio 7
 function catAndMouse(rato, gato1, gato2) { 
   let cat1 = Math.abs(rato - gato1)
@@ -82,13 +82,38 @@ function fizzBuzz(array3) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(codigo) {
+  let letras = ["a", "e", "i", "o", "u"]
+  let numeros = ["1", "2", "3", "4", "5"]
+  let codificada = ''
+  for (i = 0; i < codigo.length; i +=1) {
+    for (i2 = 0; i2 < 6; i2 += 1){
+      if (i2 == 5) {
+        codificada += codigo[i]
+      } else if (letras[i2] == codigo[i]){
+        codificada += numeros[i2]
+        break
+      }
+    }
+  } return codificada
 }
-function decode() {
-  // seu código aqui
+function decode(decodigo) {
+  let letras1 = ["a", "e", "i", "o", "u"]
+  let numeros1 = ["1", "2", "3", "4", "5"]
+  let codificada1 = ''
+  for (i = 0; i < decodigo.length; i +=1) {
+    for (i2 = 0; i2 < 6; i2 += 1){
+      if (i2 == 5) {
+        codificada1 += decodigo[i]
+      } else if (numeros1[i2] == decodigo[i]){
+        codificada1 += letras1[i2]
+        break
+      }
+    }
+  } return codificada1
 }
-
+console.log(encode("hi there!"))
+console.log(decode("h3 th2r2!"))
 module.exports = {
   calcArea,
   catAndMouse,
@@ -102,9 +127,9 @@ module.exports = {
   splitSentence,
 };
 
-
 // utilizei a função para orgarnizar os numeros do array em ordem crescente na prorpiedade .sort()
+// link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function compararNumeros(a, b) {
   return a - b;
 }
-// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
