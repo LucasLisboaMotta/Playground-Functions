@@ -1,4 +1,3 @@
-// Desafio 1
 function compareTrue(alfa, beta) {
   if (alfa == true && beta == true) {
     return true
@@ -7,11 +6,10 @@ function compareTrue(alfa, beta) {
   }
 }
 
-// Desafio 2
 function calcArea(base, altura) {
   return (base * altura) / 2
 }
-// Desafio 3
+
 function splitSentence(frase) {
   let array = []
   let frase2 = ''
@@ -28,7 +26,6 @@ function splitSentence(frase) {
   }  return array
 }
 
-// Desafio 4
 function concatName(array2) {
   let frase3 = ''
   for (i = 0; i < 3; i += 1) {
@@ -42,17 +39,14 @@ function concatName(array2) {
   } return frase3  
 }
 
-// Desafio 5
 function footballPoints(vitoria, empate) {
   return (vitoria * 3) + empate
 }
 
-// Desafio 6
 function highestCount(sequencia) {
   return (sequencia.sort(compararNumeros).lastIndexOf(sequencia[sequencia.length - 1]) - sequencia.sort(compararNumeros).indexOf(sequencia[sequencia.length - 1])) + 1
 }
 
-// Desafio 7
 function catAndMouse(rato, gato1, gato2) { 
   let cat1 = Math.abs(rato - gato1)
   let cat2 = Math.abs(rato - gato2)
@@ -65,7 +59,6 @@ function catAndMouse(rato, gato1, gato2) {
   }
 }
 
-// Desafio 8
 function fizzBuzz(array3) {
   let array4 = []
   for (i = 0; i < array3.length; i += 1) {
@@ -81,7 +74,6 @@ function fizzBuzz(array3) {
   } return array4
 }
 
-// Desafio 9
 function encode(codigo) {
   let letras = ["a", "e", "i", "o", "u"]
   let numeros = ["1", "2", "3", "4", "5"]
@@ -112,8 +104,6 @@ function decode(decodigo) {
     }
   } return codificada1
 }
-console.log(encode("hi there!"))
-console.log(decode("h3 th2r2!"))
 module.exports = {
   calcArea,
   catAndMouse,
@@ -126,10 +116,8 @@ module.exports = {
   highestCount,
   splitSentence,
 };
-
 // utilizei a função para orgarnizar os numeros do array em ordem crescente na prorpiedade .sort()
 // link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function compararNumeros(a, b) {
   return a - b;
 }
-
