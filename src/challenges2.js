@@ -63,9 +63,22 @@ function triangleCheck(ladoA, ladoB, ladoC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(bebidas) {
+  let numeros = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  let agua = 0
+  for (i = 0; i < bebidas.length; i += 1) {
+      for (i2 = 0; i2 < 9; i2 += 1) {
+          if(bebidas[i] == numeros[i2]) {
+              agua += i2 + 1
+          }
+      }
+  } if(agua == 1) {
+    return "1 copo de água"
+  } else {
+    return (numeros[agua - 1] + ' copos de água')
+  }
 }
+
 
 module.exports = {
   generatePhoneNumber,
