@@ -1,8 +1,8 @@
 // Desafio 10
 function techList(tecnologia, nome) {
-  let listaTec = []
-  if (tecnologia.length == 0) {
-    return 'Vazio!'
+  let listaTec = [];
+  if (tecnologia.length === 0) {
+    return 'Vazio!';
 } else {
     for (i = 0; i < tecnologia.length; i += 1) {
         listaTec.push({"name": nome, "tech": tecnologia.sort()[i]})
@@ -30,7 +30,7 @@ function generatePhoneNumber(telefone) {
         seq6 += telefone[i - 4]
     } 
 }
-  let seq1 = telefone.sort()
+  let seq1 = [...telefone.sort()]
   let seq2 = []
   let seq3 = []
   let seq4 = []
@@ -52,33 +52,24 @@ function generatePhoneNumber(telefone) {
 
 // Desafio 12
 function triangleCheck(ladoA, ladoB, ladoC) {
-  let alfa = (ladoB + ladoC) - ladoA
-  let beta = (ladoA + ladoC) - ladoB
-  let gama = (ladoA + ladoC) - ladoC
-  if (alfa > 0 && beta > 0 && gama > 0 ) {
-    return true 
-} else {
-    return false
-}
+  return (ladoB + ladoC) - ladoA > 0 && (ladoA + ladoC) - ladoB > 0 && (ladoA + ladoC) - ladoC > 0;
 }
 
 // Desafio 13
 function hydrate(bebidas) {
   let numeros = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-  let agua = 0
-  for (i = 0; i < bebidas.length; i += 1) {
-      for (i2 = 0; i2 < 9; i2 += 1) {
-          if(bebidas[i] == numeros[i2]) {
-              agua += i2 + 1
-          }
+  let agua = 0;
+  let unica = '1 copo de água';
+  for (let i = 0; i < bebidas.length; i += 1) {
+    for (let i2 = 0; i2 < 9; i2 += 1) {
+      if (bebidas[i] === numeros[i2]) {
+        agua += i2 + 1;
       }
-  } if(agua == 1) {
-    return "1 copo de água"
-  } else {
-    return (numeros[agua - 1] + ' copos de água')
-  }
+    }
+  } if (agua !== 1) {
+    unica = numeros[agua - 1] + ' copos de água';
+  } return unica;
 }
-
 
 module.exports = {
   generatePhoneNumber,
@@ -91,4 +82,25 @@ module.exports = {
 // link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function compararNumeros(a, b) {
   return a - b;
+}
+// função para separar converter os numeros em string, atividade 11
+function convertNumero(arrayN) {
+  let seq6 = ''
+  for (i = 0; i < 15; i += 1 ) {
+    if ( i == 0) {
+        seq6 += "("
+    } else if (i >= 1 && i <= 2) {
+        seq6 += arrayN[i - 1]
+    } else if (i == 3) {
+        seq6 += ")"
+    } else if (i == 4) {
+        seq6 += " "
+    }else if (i >= 5 && i <= 9) {
+        seq6 += arrayN[i - 3]
+    } else if (i == 10) {
+        seq6 += "-"
+    } else {
+        seq6 += arrayN[i - 4]
+    }
+} return seq6;
 }
